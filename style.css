@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #DCD6F7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+    padding-top: 1rem;
+    height: 2.5rem;
+    width: 100%;
+    text-align: center;
+    background-color: #424874;
+}
+
+.footerLink {
+    color: white;
+    text-decoration: none;
+}
+
+.footerLink:hover {
+    text-decoration: underline;
+}
