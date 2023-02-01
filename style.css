@@ -46,6 +46,7 @@ footer {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
+    overflow: hidden;
 }
 
 .colorPickerDiv {
@@ -87,4 +88,23 @@ label {
 
 input[type="radio"]:checked+label {
     background-color:#EF476F;
+}
+
+.sliderContainer {
+    width: 100%;
+    display: block;
+}
+
+.boardRes {
+    display: block;
+    text-align: center;
+}
+
+.slider {
+    display: block;
+    margin: 5px auto;
+}
+
+.instructions {
+    text-align: center;
 }

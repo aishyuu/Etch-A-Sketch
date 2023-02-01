@@ -1,4 +1,6 @@
 const parentNode = document.querySelector('.sketchBoard');
+let slider = document.querySelector("#myRange");
+let boardRes = document.querySelector(".boardRes")
 
 function getOptionValue(options) {
     for(let i = 0; i < options.length; i++) {
@@ -36,17 +38,29 @@ function clearBoard() {
         block.style.backgroundColor = "white";
     });
 }
-
-for(let i = 0; i < (16*16); i++) {
-    const div = document.createElement('div');
-    const size = 400/16;
-
-    div.style.width = `${size}px`;
-    div.style.height = `${size}px`;
-    div.style.backgroundColor = "white";
-
-    div.onmouseover = hover;
-
-    parentNode.appendChild(div);
+function boardSetup(res) {
+    for(let i = 0; i < (res*res); i++) {
+        const div = document.createElement('div');
+        const size = 400/res;
+    
+        div.style.width = `${size.toFixed(8)}px`;
+        div.style.height = `${size.toFixed(8)}px`;
+        div.style.backgroundColor = "white";
+    
+        div.onmouseover = hover;
+    
+        parentNode.appendChild(div);
+    }
 }
 
+function resChange() {
+    const res = slider.value;
+    boardRes.innerHTML = `${res} x ${res}`
+
+    while (parentNode.firstChild) {
+        parentNode.removeChild(parentNode.lastChild);
+    }
+    boardSetup(res);
+}
+
+boardSetup(16);
