@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
 * {
     margin: 0;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 body {
@@ -7,6 +10,15 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+header {
+    margin-top: 2rem;
+}
+
+.headerText {
+    text-align: center;
+    font-size: 3.5rem;
 }
 
 footer {
@@ -25,4 +37,36 @@ footer {
 
 .footerLink:hover {
     text-decoration: underline;
+}
+
+.sketchBoard {
+    width: 400px;
+    height: 400px;
+    border: 1px solid black;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.colorPickerDiv {
+    display: flex;
+}
+
+.colorPicker {
+    width: 9rem;
+    height: 9rem;
+    border: none;
+    margin: 0 auto;
+}
+
+.boardActions {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.boardButtons {
+    display: flex;
+    flex-direction: column;
+    
 }
