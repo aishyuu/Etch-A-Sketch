@@ -1,8 +1,33 @@
 const parentNode = document.querySelector('.sketchBoard');
 
+function getOptionValue(options) {
+    for(let i = 0; i < options.length; i++) {
+        if(options[i].checked) {
+            return options[i].value;
+        }
+    }
+}
+
 function hover(e) {
     const color = document.querySelector(".colorPicker").value;
-    e.target.style.backgroundColor = color;
+    const options = document.getElementsByName('actionOption')
+    const optionChosen = getOptionValue(options);
+    console.log(optionChosen);
+    
+    switch(optionChosen) {
+        case "color":
+            e.target.style.backgroundColor = color;
+            break;
+        case "eraser":
+            e.target.style.backgroundColor = "white";
+            break;
+        case "rainbow":
+            let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+            e.target.style.backgroundColor = `#${randomColor}`;
+            break;
+    }
+    
+    
 }
 
 function clearBoard() {
